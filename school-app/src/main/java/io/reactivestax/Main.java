@@ -10,8 +10,8 @@ import org.hibernate.Transaction;
 
 public class Main {
     public static void main(String[] args) {
-//        saveCourse();
-        deleteCourse(1);
+        saveCourse();
+//        deleteCourse(1);
     }
 
     public static void saveCourse() {
@@ -31,6 +31,7 @@ public class Main {
                 session.persist(student);
 
                 Enrollment enrollment = new Enrollment();
+                //Making the composite key for the enrollment embed id
                 EnrollmentId enrollmentId = new EnrollmentId(course.getId(), student.getId());
                 enrollment.setId(enrollmentId);
                 enrollment.setStudent(student);
@@ -105,6 +106,5 @@ public class Main {
             }
         }
     }
-
 
 }

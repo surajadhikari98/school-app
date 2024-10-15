@@ -7,7 +7,6 @@ import java.io.Serializable;
 
 @Embeddable
 @Data
-@RequiredArgsConstructor
 @AllArgsConstructor
 public class EnrollmentId implements Serializable {
     private Long studentId;
